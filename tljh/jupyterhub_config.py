@@ -28,7 +28,7 @@ c.JupyterHub.proxy_class = TraefikTomlProxy
 c.SystemdSpawner.extra_paths = [os.path.join(USER_ENV_PREFIX, "bin")]
 c.SystemdSpawner.default_shell = "/bin/bash"
 # Drop the '-singleuser' suffix present in the default template
-c.SystemdSpawner.unit_name_template = "jupyter-{USERNAME}"
+c.SystemdSpawner.unit_name_template = "{USERNAME}"
 
 tljh_config = configurer.load_config()
 configurer.apply_config(tljh_config, c)
